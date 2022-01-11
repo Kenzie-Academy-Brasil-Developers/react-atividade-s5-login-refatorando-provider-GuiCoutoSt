@@ -34,6 +34,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
     color: #444;
+    background-color: #fff;
   }
 
   :root {

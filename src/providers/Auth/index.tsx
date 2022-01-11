@@ -1,6 +1,7 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { success, error } from "../../utils/toasts";
 
 interface UserData {
   email: string;
@@ -33,9 +34,11 @@ export const AuthProvider = ({ children }: AuthProps) => {
         localStorage.setItem("token", response.data.token);
         setAuthToken(response.data.token);
         history.push("/dashboard");
-        console.log(response.data.token);
+        success("welcome back!");
       })
-      .catch((err) => console.error(err));
+      .catch(() => {
+        error("invalid credentials");
+      });
   };
 
   const logout = () => {

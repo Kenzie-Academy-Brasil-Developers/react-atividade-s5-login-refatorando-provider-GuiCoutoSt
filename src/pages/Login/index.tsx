@@ -58,7 +58,7 @@ const Login = () => {
             error={errors.password?.message}
             register={register}
           />
-          <button type="submit">Entrar</button>
+          <button type="submit">login</button>
         </form>
       </Container>
     </Layout>
